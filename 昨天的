@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include<string.h>
-#include<time.h>
+#include <string.h>
+#include <time.h>
 struct Patient//患者结构体
 {
     char P_Name[20];
@@ -213,52 +213,52 @@ void D_outcall()//输出医生的出诊情况
     printf("周一出诊的医生为：\n");
     while(dp!=NULL)
         {if(dp->D_Workday[0]==1)
-        {printf("%s %s %s %s\n",dp->D_Name,dp->D_Level,dp->D_Dep,dp->D_Number);
+        {printf("%-12s %-12s %-12s %-12s\n",dp->D_Name,dp->D_Level,dp->D_Dep,dp->D_Number);
         dp=dp->D_nextp;}
     else
         dp=dp->D_nextp;
 }
-printf("______________________________\n");
+printf("____________________________________________\n");
 dp=d_head->D_nextp;
     printf("周二出诊的医生为：\n");
     while(dp!=NULL)
         {if(dp->D_Workday[1]==1)
-        {printf("%s %s %s %s\n",dp->D_Name,dp->D_Level,dp->D_Dep,dp->D_Number);
+        {printf("%-12s %-12s %-12s %-12s\n",dp->D_Name,dp->D_Level,dp->D_Dep,dp->D_Number);
         dp=dp->D_nextp;}
     else
         dp=dp->D_nextp;
 }
-printf("______________________________\n");
+printf("____________________________________________\n");
 dp=d_head->D_nextp;
     printf("周三出诊的医生为：\n");
     while(dp!=NULL)
         {if(dp->D_Workday[2]==1)
-        {printf("%s %s %s %s\n",dp->D_Name,dp->D_Level,dp->D_Dep,dp->D_Number);
+        {printf("%-12s %-12s %-12s %-12s\n",dp->D_Name,dp->D_Level,dp->D_Dep,dp->D_Number);
         dp=dp->D_nextp;}
     else
         dp=dp->D_nextp;
 }
-printf("______________________________\n");
+printf("____________________________________________\n");
 dp=d_head->D_nextp;
     printf("周四出诊的医生为：\n");
     while(dp!=NULL)
         {if(dp->D_Workday[3]==1)
-        {printf("%s %s %s %s\n",dp->D_Name,dp->D_Level,dp->D_Dep,dp->D_Number);
+        {printf("%-12s %-12s %-12s %-12s\n",dp->D_Name,dp->D_Level,dp->D_Dep,dp->D_Number);
         dp=dp->D_nextp;}
     else
         dp=dp->D_nextp;
 }
-printf("______________________________\n");
+printf("____________________________________________\n");
 dp=d_head->D_nextp;
     printf("周五出诊的医生为：\n");
     while(dp!=NULL)
         {if(dp->D_Workday[4]==1)
-        {printf("%s %s %s %s\n",dp->D_Name,dp->D_Level,dp->D_Dep,dp->D_Number);
+        {printf("%-12s %-12s %-12s %-12s\n",dp->D_Name,dp->D_Level,dp->D_Dep,dp->D_Number);
         dp=dp->D_nextp;}
     else
         dp=dp->D_nextp;
 }
-printf("______________________________\n");
+printf("____________________________________________\n");
 dp=d_head->D_nextp;
     printf("周六出诊的医生为：\n");
     while(dp!=NULL)
@@ -268,7 +268,7 @@ dp=d_head->D_nextp;
     else
         dp=dp->D_nextp;
 }
-printf("______________________________\n");
+printf("____________________________________________\n");
 dp=d_head->D_nextp;
     printf("周天出诊的医生为：\n");
     while(dp!=NULL)
@@ -278,7 +278,7 @@ dp=d_head->D_nextp;
     else
         dp=dp->D_nextp;
 }
-printf("______________________________\n");
+printf("____________________________________________\n");
 }
 void R_delete(char* number)//根据挂号删除链表中的诊疗记录
 {
@@ -374,7 +374,6 @@ void R_finput()//从文件输入诊疗记录
 {
     r_head->rnextp=NULL;
     FILE* fp;
-    int count;
     if((fp=fopen("record.txt","r"))==NULL)
        {
            printf("文件打开失败！");
@@ -745,30 +744,30 @@ int Caculate(int* a, int* b) {
 	return sum;
 }//计算住院费a>b
 void Timecheck(int* p) {
-	if (*(p + 2) > 0 && *(p + 2) < 25 && *(p + 3) > 0 && *(p + 3) < 61) {
-		if (*p == 1 && *(p + 1) > 0 && *(p + 1) < 31)
+	if (*(p + 2) >= 0 && *(p + 2) < 25 && *(p + 3) >= 0 && *(p + 3) < 61) {
+		if (*p == 1 && *(p + 1) >= 0 && *(p + 1) <= 31)
 			return;
-		if (*p == 2 && *(p + 1) > 0 && *(p + 1) < 29)
+		if (*p == 2 && *(p + 1) >= 0 && *(p + 1) <=29)
 			return;
-		if (*p == 3 && *(p + 1) > 0 && *(p + 1) < 31)
+		if (*p == 3 && *(p + 1) >= 0 && *(p + 1) <= 31)
 			return;
-		if (*p == 4 && *(p + 1) > 0 && *(p + 1) < 30)
+		if (*p == 4 && *(p + 1) >= 0 && *(p + 1) <=30)
 			return;
-		if (*p == 5 && *(p + 1) > 0 && *(p + 1) < 31)
+		if (*p == 5 && *(p + 1) >= 0 && *(p + 1) <= 31)
 			return;
-		if (*p == 6 && *(p + 1) > 0 && *(p + 1) < 30)
+		if (*p == 6 && *(p + 1) >= 0 && *(p + 1) <= 30)
 			return;
-		if (*p == 7 && *(p + 1) > 0 && *(p + 1) < 31)
+		if (*p == 7 && *(p + 1) >= 0 && *(p + 1) <= 31)
 			return;
-		if (*p == 8 && *(p + 1) > 0 && *(p + 1) < 31)
+		if (*p == 8 && *(p + 1) >= 0 && *(p + 1) <= 31)
 			return;
-		if (*p == 9 && *(p + 1) > 0 && *(p + 1) < 30)
+		if (*p == 9 && *(p + 1) >= 0 && *(p + 1) <= 30)
 			return;
-		if (*p == 10 && *(p + 1) > 0 && *(p + 1) < 31)
+		if (*p == 10 && *(p + 1) >= 0 && *(p + 1) <= 31)
 			return;
-		if (*p == 11 && *(p + 1) > 0 && *(p + 1) < 30)
+		if (*p == 11 && *(p + 1) >= 0 && *(p + 1) <= 30)
 			return;
-		if (*p == 12 && *(p + 1) > 0 && *(p + 1) < 31)
+		if (*p == 12 && *(p + 1) >= 0 && *(p + 1) <=31)
 			return;
 		printf("输入的时间有误");
 		exit(0);
@@ -918,10 +917,6 @@ void Report(struct hospitalimformation* p) {
 	printf("预计出院日期：%d月%d日%d时%d分\n", p->outdate[0], p->outdate[1], p->outdate[2], p->outdate[3]);
 	printf("住院押金：%d", p->cashplage);
 }
-void Gethospitalimformationfromlist() {
-}//从链表中得到信息导入文件
-void Outhospitalimformationtolist() {
-}//将文件的信息导入链表
 void Deletehospitalimformation() {
 	struct hospitalimformation* p = hospitalhead.next;
 	int a;
@@ -1039,6 +1034,61 @@ int Turnover() {
 	}//计算在出院人员里的住院费
 	return sum;
 }//计算住院营业额
+void Outhospitalimformationtolist(){
+
+     r_head->rnextp=NULL;
+    FILE* fp;
+    int count;
+    if((fp=fopen("hospital.txt","r"))==NULL)
+       {
+           printf("文件打开失败！");
+           exit(0);
+       }
+
+    while(!feof(fp))
+    //fscanf(fp,"%d",&count);
+    //for(int w = 0; w < count ; w++)
+    {
+            struct hospitalimformation* hp=(struct hospitalimformation*)malloc(sizeof(struct hospitalimformation));
+            fscanf(fp,"%s",hp->name);
+             fscanf(fp,"%d",&hp->id);
+             for(int i=0;i<4;i++)
+             fscanf(fp,"%d",&hp->indate);
+             for(int i=0;i<4;i++)
+             fscanf(fp,"%d",&hp->outdate);
+             fscanf(fp,"%d",&hp->cashplage);
+            struct hospitalimformation* p;
+                    p=&hospitalhead;
+            while(p->next!=&hospitaltail)
+                p=p->next;
+            p->next=hp;
+            hp->next=&hospitaltail;
+    }
+    fclose(fp);
+}//将文件的信息导入链表
+
+void Gethospitalimformationfromlist() {
+      struct hospitalimformation* hp=hospitalhead.next;
+   FILE* fp;
+    if((fp=fopen("hospital.txt","w"))==NULL)
+        printf("文件打开失败！");
+    else
+    {
+     while(hp!=&hospitaltail)
+    {
+    fprintf(fp,"%s ",hp->name);
+    for(int i=0;i<4;i++)
+    fprintf(fp,"%d ",&hp->indate);
+    for(int i=0;i<4;i++)
+    fprintf(fp,"%d ",&hp->outdate);
+fprintf(fp,"%d\n",&hp->cashplage);
+    hp=hp->next;
+    }
+    fclose(fp);
+}
+
+}//从链表中得到信息导入文件
+
 	void Print(struct Record* head)//打印诊疗记录
 {
     printf("******************************\n");
@@ -1061,7 +1111,7 @@ void Search(struct Record* head) //根据关键词搜索找到对应的结点
     int command2;
     char command3[40];
     int command4;
-        struct Record *drr = head;
+    struct Record *drr = head;
     do{
         do{
                 printf("\n*******************************\n");
@@ -1083,11 +1133,11 @@ void Search(struct Record* head) //根据关键词搜索找到对应的结点
         switch(command1){
         case '1':
             do{
-            printf("\n查询儿科请按2");
-            printf("\n查询心外科请按3");
-            printf("\n查询血液科请按4");
-            printf("\n查询消化科请按5");
-            printf("\n查询呼吸科请按6");
+            printf("\n查询儿科请按2\n");
+            printf("\n查询心外科请按3\n");
+            printf("\n查询血液科请按4\n");
+            printf("\n查询消化科请按5\n");
+            printf("\n查询呼吸科请按6\n");
             printf("\n查询普外科请按7\n");
             scanf("%d",&command2);
             if(command2==2)
@@ -1097,6 +1147,7 @@ void Search(struct Record* head) //根据关键词搜索找到对应的结点
                     if(strcmp(drr->doctor.D_Dep,"儿科") == 0)
                     Print(drr);
                 }
+                    drr = head;
             }
             else if(command2==3)
             {
@@ -1105,6 +1156,7 @@ void Search(struct Record* head) //根据关键词搜索找到对应的结点
                     if(strcmp(drr->doctor.D_Dep,"心外科") == 0)
                     Print(drr);
                 }
+                    drr = head;
             }
             else if(command2==4)
             {
@@ -1113,6 +1165,7 @@ void Search(struct Record* head) //根据关键词搜索找到对应的结点
                     if(strcmp(drr->doctor.D_Dep,"血液科") == 0)
                     Print(drr);
                 }
+                    drr = head;
             }
             else if(command2==5)
             {
@@ -1121,23 +1174,26 @@ void Search(struct Record* head) //根据关键词搜索找到对应的结点
                     if(strcmp(drr->doctor.D_Dep,"消化科") == 0)
                     Print(drr);
                 }
+                    drr = head;
             }
             else if(command2==6)
             {
-                for(drr;drr!=NULL;drr=drr->rnextp)
+                for(;drr!=NULL;drr=drr->rnextp)
                 {
                     if(strcmp(drr->doctor.D_Dep,"呼吸科") == 0)
                     Print(drr);
                 }
+                    drr = head;
             }
             else if(command2==7)
             {
 
-                for(drr;drr!=NULL;drr=drr->rnextp)
+                for(;drr!=NULL;drr=drr->rnextp)
                     {
-                    if(strcmp(drr->doctor.D_Dep,"心外科") == 0)
+                    if(strcmp(drr->doctor.D_Dep,"普外科") == 0)
                     Print(drr);
                 }
+                    drr = head;
             }
             else
             {
@@ -1145,6 +1201,7 @@ void Search(struct Record* head) //根据关键词搜索找到对应的结点
 
             }
             }while(command2<2||command2>7);
+
             break;
         case '2':
             printf("请输入想要查询的医生工号：\n");
@@ -1156,9 +1213,10 @@ void Search(struct Record* head) //根据关键词搜索找到对应的结点
                 {
                     //printf("\n以下是%s医生所接待患者的诊疗记录%d：\n",command3,count);
                     Print(drr);
-                    printf("\t");
+
                     count++;
                 }
+                drr = head;
             }
             break;
         case '3':
@@ -1171,12 +1229,14 @@ void Search(struct Record* head) //根据关键词搜索找到对应的结点
                     printf("\n");
                     Print(drr);
                 }
+                else
+                    printf("\n未查找到此患者！\n");
             }
+            drr = head;
             break;
         }
     printf("\n若想继续查询，请按1\n若需退出查询，请按0\n");
     scanf("%d",&command4);
-    fflush(stdin);
     system("cls");
     }while(command4);
 }
@@ -1216,7 +1276,7 @@ int menu()
         fflush(stdin);
         return command1+7;
     }
-
+    return 0;
 }
 
 int main()
@@ -1225,8 +1285,14 @@ int main()
     R_finput();
     hospitalhead.next = &hospitaltail;
     outhospitalhead.next = &outhospitaltail;
+    Outhospitalimformationtolist();
+    system("color 71");
+    printf("\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n");
+    printf("\t\t\t\t\t\t欢迎使用医疗管理系统\n");
+    printf("\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n");
+    system("pause");
 //    R_output(r_head);
-//    system("cls");
+    system("cls");
     char command2;
     int command1;
 do{
@@ -1243,17 +1309,20 @@ do{
         case 2:
             R_input();
             R_foutput();
+            system("pause");
             break;
         case 3:
             printf("\n请输入需要删除的诊疗记录的患者的挂号号码：\n");
             scanf("%s",number);
             R_delete(number);
+            system("pause");
             break;
         case 4:
           //  char number[9];
             printf("\n请输入需要修改诊疗记录的患者的挂号号码：\n");
             scanf("%s",number);
             R_change(number);
+            system("pause");
             break;
         case 5:
             D_outcall();
@@ -1262,21 +1331,28 @@ do{
             printf("\n请输入要查询的医生工号：\n");
             scanf("%s",d_Number);
             printf("此医生出诊的繁忙程度为%.2f\t",D_busy(d_Number));
+            system("pause");
+            fflush(stdin);
             break;
         case 7:
             printf("\n目前医院的总营业额为：%.2f\n",R_money());
+            system("pause");
             break;
         case 8:
             Inhospital();
+            system("pause");
             break;
         case 9:
             Outhospital(hospitalhead.next);
+            system("pause");
             break;
         case 10:
             Outhospitalimformationtolist();
+            system("pause");
             break;
         case 11:
             Deletehospitalimformation();
+            system("pause");
             break;
         case 12:
             break;
